@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.calc-content {
+  background-color: #273a4d;
+  height: 70vmin;
+  width: 50vmin;
+  padding: 25px 10px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.calc-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.logo {
+  width: 40px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+table {
+  margin-top: 30px;
+  width: 100%;
+}
+table thead td {
+  height: 10vmin;
+  background-color: #282c344f;
+}
+table thead td .res {
+  float: right;
+  padding-right: 20px;
+  font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+table tbody td {
+  width: 25%;
+  height: 70px;
+}
+table button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+  background-color: white;
+  font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.nums {
+  color: white;
+  background-color: #2e6d58;
+}
+.nums:hover {
+  background-color: rgba(46, 109, 88, 0.678);
+}
+
+.contrl {
+  color: white;
+  background-color: #cf6400;
+}
+.contrl:hover {
+  background-color: rgba(207, 100, 0, 0.678);
+}
+
+.ops {
+  color: white;
+  background-color: #1f5ee6;
+}
+.ops:hover {
+  background-color: rgba(31, 94, 230, 0.678);
+}
+
+/*# sourceMappingURL=style.css.map */
