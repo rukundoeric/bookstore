@@ -1,7 +1,8 @@
-[![Build Status](https://travis-ci.com/rukundoeric/calculator.svg?branch=tests)](https://travis-ci.com/rukundoeric/calculator)
+![](https://img.shields.io/badge/Microverse-blueviolet)
+[![Build Status](https://travis-ci.com/rukundoeric/bookstore.svg?branch=milestone-1)](https://travis-ci.com/rukundoeric/bookstore)
 
-# Calculator
-This i a calculator app that will help users to perform or execute complex calculations.
+# Bookstore
+Bookstore app. this is front-end of an application that will help Magic-books Inc. organize and manage their bookstore.
 
 ## Built With
 
