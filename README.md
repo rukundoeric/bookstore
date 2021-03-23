@@ -9,17 +9,18 @@ Bookstore app. this is front-end of an application that will help Magic-books In
 - React.js
 - SASS and CSS
 - Creat-React-App
+- Redux
 
 ## Live Demo
 
-[Live Demo Link](https://calculator-2v.herokuapp.com/)
+[Live Demo Link](https://book-store-b.herokuapp.com/)
 
 ## Getting Started
 NOTE: Make sure you have Node.js and npm or yarn installed in your PC.
-- Clone this repo: `git clone https://github.com/rukundoeric/calculator.git`
-- Navigate into project directory: `cd calculator`
+- Clone this repo: `git clone https://github.com/rukundoeric/bookstore.git`
+- Navigate into project directory: `cd bookstore`
 - Install all packages: `yarn install or npm install`
-- Start the app: `yarn start or npm start`
+- Start the app: `yarn test or npm test`
 
 ## Available Scripts
 
@@ -69,7 +70,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/rukundoeric/todo-list/issues).
+Feel free to check the [issues page](https://github.com/rukundoeric/bookstore/issues).
 
 ## Show your support
 
