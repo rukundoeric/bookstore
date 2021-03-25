@@ -1,31 +1,39 @@
-import React from 'react';
+/* eslint-disable react/forbid-prop-types */
+import React, { Component } from 'react';
 import key from 'uniqid';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Book from '../items/Book';
 
-const books = [
-  {
-    id: 'SK449D',
-    title: 'The story of my life',
-    category: 'fiction',
-  },
-];
+class BooksList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: [],
+    };
+  }
 
-function BooksList() {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>TITLE</th>
-          <th>CATEGORY</th>
-        </tr>
-      </thead>
-      <tbody>
-        {books.map(book => (<Book book={book} key={key()} />))}
-      </tbody>
-    </table>
-  );
+  render() {
+    const { books } = this.state;
+
+    return (
+      <table border="1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>CATEGORY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map(book => (<Book book={book} key={key()} />))}
+        </tbody>
+      </table>
+    );
+  }
 }
 
-export default BooksList;
+const mapStateToProps = ({ books: { books } }) => ({
+  books,
+});
+
+export default connect(mapStateToProps, {})(BooksList);

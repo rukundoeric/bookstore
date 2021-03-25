@@ -1,5 +1,9 @@
 const initialState = {
-  books: [],
+  books: [{
+    id: 'ERI983CE',
+    title: 'Story of my life',
+    category: 'fiction',
+  }],
 };
 
 export default (state = initialState, action) => {
