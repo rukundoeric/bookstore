@@ -28,16 +28,17 @@ class BooksList extends Component {
     const { books } = this.state;
 
     return (
-      <table border="1">
+      <table className="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>TITLE</th>
-            <th>CATEGORY</th>
+            <th>#</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Category</th>
           </tr>
         </thead>
         <tbody>
-          {books.map(book => (<Book book={book} key={key()} />))}
+          {books.map((book, i) => (<Book index={i} book={book} key={key()} />))}
         </tbody>
       </table>
     );
