@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import key from 'uniqid';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
 import Book from '../items/Book';
 
 class BooksList extends Component {
@@ -10,6 +12,16 @@ class BooksList extends Component {
     this.state = {
       books: [],
     };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (!_.isEqual(prevState.books, nextProps.books)) {
+      return {
+        books: nextProps.books,
+      };
+    }
+
+    return null;
   }
 
   render() {
@@ -31,6 +43,14 @@ class BooksList extends Component {
     );
   }
 }
+
+BooksList.propTypes = {
+  books: PropTypes.array,
+};
+
+BooksList.defaultProps = {
+  books: [],
+};
 
 const mapStateToProps = ({ books: { books } }) => ({
   books,
