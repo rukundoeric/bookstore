@@ -27,51 +27,59 @@ exports[`Should match snapshot 1`] = `
             type="text"
           />
         </div>
-        <select
-          aria-label="Default select example"
-          class="form-select"
-          name="category"
-          required=""
-        >
-          <option>
-            Select category
-          </option>
-          <option
-            value="Fiction"
+        <div>
+          <label
+            class="form-label"
+            for="category"
           >
-            Fiction
-          </option>
-          <option
-            value="Biography"
+            Category
+          </label>
+          <select
+            aria-label="Default select example"
+            class="form-select"
+            name="category"
+            required=""
           >
-            Biography
-          </option>
-          <option
-            value="History"
-          >
-            History
-          </option>
-          <option
-            value="Horror"
-          >
-            Horror
-          </option>
-          <option
-            value="Kids"
-          >
-            Kids
-          </option>
-          <option
-            value="Learning"
-          >
-            Learning
-          </option>
-          <option
-            value="Sci-Fi"
-          >
-            Sci-Fi
-          </option>
-        </select>
+            <option>
+              Select category
+            </option>
+            <option
+              value="Fiction"
+            >
+              Fiction
+            </option>
+            <option
+              value="Biography"
+            >
+              Biography
+            </option>
+            <option
+              value="History"
+            >
+              History
+            </option>
+            <option
+              value="Horror"
+            >
+              Horror
+            </option>
+            <option
+              value="Kids"
+            >
+              Kids
+            </option>
+            <option
+              value="Learning"
+            >
+              Learning
+            </option>
+            <option
+              value="Sci-Fi"
+            >
+              Sci-Fi
+            </option>
+          </select>
+        </div>
         <button
           class="btn btn-primary mt-3"
           type="submit"
