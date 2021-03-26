@@ -26,10 +26,13 @@ function BooksForm({ createBook }) {
         <label htmlFor="title" className="form-label">Title</label>
         <input type="text" required name="title" className="form-control" id="title" placeholder="Title" />
       </div>
-      <select className="form-select" required name="category" aria-label="Default select example">
-        <option defaultValue>Select category</option>
-        {categories.map(value => (<option key={uniqid()} value={value}>{value}</option>))}
-      </select>
+      <div>
+        <label htmlFor="category" className="form-label">Category</label>
+        <select className="form-select" required name="category" aria-label="Default select example">
+          <option defaultValue>Select category</option>
+          {categories.map(value => (<option key={uniqid()} value={value}>{value}</option>))}
+        </select>
+      </div>
       <button type="submit" className="btn btn-primary mt-3">Submit</button>
     </form>
   );
