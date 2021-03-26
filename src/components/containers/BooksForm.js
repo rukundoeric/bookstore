@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 import { createBook } from '../../redux/actions';
 
-function BooksForm(props) {
+function BooksForm({ dispatch }) {
   const handleSubmit = e => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -14,8 +14,11 @@ function BooksForm(props) {
       title: formData.get('title'),
       category: formData.get('category'),
     };
-    props.createBook(book);
+    dispatch(createBook(book));
+    e.target.reset();
   };
+
+  const categories = ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,13 +28,7 @@ function BooksForm(props) {
       </div>
       <select className="form-select" required name="category" aria-label="Default select example">
         <option defaultValue>Select category</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Biography">Biography</option>
-        <option value="History">History</option>
-        <option value="Horror">Horror</option>
-        <option value="Kids">Kids</option>
-        <option value="Learning">Learning</option>
-        <option value="Sci-Fi">Sci-Fi</option>
+        {categories.map(value => (<option key={uniqid()} value={value}>{value}</option>))}
       </select>
       <button type="submit" className="btn btn-primary mt-3">Submit</button>
     </form>
@@ -39,7 +36,7 @@ function BooksForm(props) {
 }
 
 BooksForm.propTypes = {
-  createBook: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default connect(null, { createBook })(BooksForm);
+export default connect()(BooksForm);

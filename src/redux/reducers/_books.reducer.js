@@ -1,19 +1,12 @@
-const initialState = {
-  books: [],
-};
-
-export default (state = initialState, action) => {
+export default (state = [], action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case 'CREATE_BOOK': {
-      const res = state.books;
-      res.push(payload);
-      return {
+    case 'CREATE_BOOK':
+      return [
         ...state,
-        books: res,
-      };
-    }
+        { ...payload },
+      ];
 
     default:
       return state;

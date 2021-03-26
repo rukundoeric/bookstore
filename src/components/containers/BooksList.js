@@ -1,24 +1,11 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
 /* eslint-disable react/forbid-prop-types */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import key from 'uniqid';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import Book from '../items/Book';
 
-function BooksList(props) {
-  const [books, setBooks] = useState(props.books);
-
-  useEffect(() => {
-    setBooks(props.books);
-  }, [props.books]);
-
+function BooksList({ books }) {
   return (
     <table className="table table-striped">
       <thead>
@@ -37,15 +24,11 @@ function BooksList(props) {
 }
 
 BooksList.propTypes = {
-  books: PropTypes.array,
+  books: PropTypes.array.isRequired,
 };
 
-BooksList.defaultProps = {
-  books: {},
-};
-
-const mapStateToProps = ({ books: { books } }) => ({
+const mapStateToProps = ({ books }) => ({
   books,
 });
 
-export default connect(mapStateToProps, {})(BooksList);
+export default connect(mapStateToProps)(BooksList);
