@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 import { createBook } from '../../redux/actions';
 
-function BooksForm({ dispatch }) {
+function BooksForm({ createBook }) {
   const handleSubmit = e => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -14,7 +14,7 @@ function BooksForm({ dispatch }) {
       title: formData.get('title'),
       category: formData.get('category'),
     };
-    dispatch(createBook(book));
+    createBook(book);
     e.target.reset();
   };
 
@@ -36,7 +36,11 @@ function BooksForm({ dispatch }) {
 }
 
 BooksForm.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  createBook: PropTypes.func.isRequired,
 };
 
-export default connect()(BooksForm);
+const mapDispatchToProps = {
+  createBook,
+};
+
+export default connect(null, mapDispatchToProps)(BooksForm);

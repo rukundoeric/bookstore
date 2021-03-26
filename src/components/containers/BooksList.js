@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import { deleteBook } from '../../redux/actions';
 import Book from '../items/Book';
 
-function BooksList({ books, dispatch }) {
+function BooksList({ books, deleteBook }) {
   const handleDeleteBook = ({ target: { dataset: { id } } }) => {
-    dispatch(deleteBook(id));
+    deleteBook(id);
   };
 
   return (
@@ -33,11 +33,15 @@ function BooksList({ books, dispatch }) {
 
 BooksList.propTypes = {
   books: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  deleteBook: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ books }) => ({
   books,
 });
 
-export default connect(mapStateToProps)(BooksList);
+const mapDispatchToProps = {
+  deleteBook,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
