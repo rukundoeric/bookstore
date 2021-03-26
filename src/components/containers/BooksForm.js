@@ -2,11 +2,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import uniqid from 'uniqid';
+import { createBook } from '../../redux/actions';
 
 function BooksForm(props) {
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e);
+    const formData = new FormData(e.target);
+    const book = {
+      id: `${uniqid()}-${uniqid()}`.toUpperCase(),
+      title: formData.get('title'),
+      category: formData.get('category'),
+    };
+    props.createBook(book);
   };
 
   return (
@@ -31,7 +39,7 @@ function BooksForm(props) {
 }
 
 BooksForm.propTypes = {
-  createBook: PropTypes.func,
+  createBook: PropTypes.func.isRequired,
 };
 
-export default connect(null, { })(BooksForm);
+export default connect(null, { createBook })(BooksForm);
