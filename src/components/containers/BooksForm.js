@@ -10,7 +10,7 @@ function BooksForm({ createBook }) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const book = {
-      id: `${uniqid()}-${uniqid()}`.toUpperCase(),
+      id: `${uniqid()}_${uniqid()}`.toUpperCase(),
       title: formData.get('title'),
       category: formData.get('category'),
     };
