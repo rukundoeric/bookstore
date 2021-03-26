@@ -20,7 +20,7 @@ NOTE: Make sure you have Node.js and npm or yarn installed in your PC.
 - Clone this repo: `git clone https://github.com/rukundoeric/bookstore.git`
 - Navigate into project directory: `cd bookstore`
 - Install all packages: `yarn install or npm install`
-- Start the app: `yarn test or npm test`
+- Start the app: `yarn start or npm start`
 
 ## Available Scripts
 
