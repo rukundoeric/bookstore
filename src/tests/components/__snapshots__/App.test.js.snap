@@ -25,6 +25,7 @@ exports[`Should match snapshot 1`] = `
             placeholder="Title"
             required=""
             type="text"
+            value=""
           />
         </div>
         <div>
@@ -40,9 +41,6 @@ exports[`Should match snapshot 1`] = `
             name="category"
             required=""
           >
-            <option>
-              Select category
-            </option>
             <option
               value="Fiction"
             >

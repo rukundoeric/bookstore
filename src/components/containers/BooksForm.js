@@ -1,41 +1,89 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 import { createBook } from '../../redux/actions';
 
-function BooksForm({ createBook }) {
-  const handleSubmit = e => {
+class BooksForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      category: 'Fiction',
+      categories: ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
+    };
+  }
+
+  handleSubmit = e => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const { createBook } = this.props;
+    const { title, category } = this.state;
     const book = {
       id: `${uniqid()}_${uniqid()}`.toUpperCase(),
-      title: formData.get('title'),
-      category: formData.get('category'),
+      title,
+      category,
     };
     createBook(book);
     e.target.reset();
+    this.setState({ title: '', category: 'Select category' });
   };
 
-  const categories = ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+  handleChange = e => {
+    const { value } = e.target;
+    switch (e.target.name) {
+      case 'title':
+        this.setState({ title: value });
+        break;
+      case 'category':
+        this.setState({ category: value });
+        break;
+      default:
+    }
+  }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="title" className="form-label">Title</label>
-        <input type="text" required name="title" className="form-control" id="title" placeholder="Title" />
-      </div>
-      <div>
-        <label htmlFor="category" className="form-label">Category</label>
-        <select className="form-select" required name="category" aria-label="Default select example">
-          <option defaultValue>Select category</option>
-          {categories.map(value => (<option key={uniqid()} value={value}>{value}</option>))}
-        </select>
-      </div>
-      <button type="submit" className="btn btn-primary mt-3">Submit</button>
-    </form>
-  );
+  render() {
+    const { title, category, categories } = this.state;
+
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="title" className="form-label">Title</label>
+          <input
+            required
+            type="text"
+            name="title"
+            value={title}
+            className="form-control"
+            id="title"
+            placeholder="Title"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="category" className="form-label">Category</label>
+          <select
+            required
+            className="form-select"
+            name="category"
+            aria-label="Default select example"
+            onChange={this.handleChange}
+          >
+            {categories.map(value => (
+              <option
+                defaultValue={category === value}
+                key={uniqid()}
+                value={value}
+              >
+                {value}
+              </option>
+            ))}
+          </select>
+        </div>
+        <button type="submit" className="btn btn-primary mt-3">Submit</button>
+      </form>
+    );
+  }
 }
 
 BooksForm.propTypes = {
