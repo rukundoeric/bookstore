@@ -10,7 +10,6 @@ class BooksForm extends Component {
     this.state = {
       title: '',
       category: 'Fiction',
-      categories: ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
     };
   }
 
@@ -42,7 +41,8 @@ class BooksForm extends Component {
   }
 
   render() {
-    const { title, category, categories } = this.state;
+    const { title, category } = this.state;
+    const { categories } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -73,7 +73,7 @@ class BooksForm extends Component {
             >
               {categories.map(value => (
                 <option
-                  defaultValue={category === value}
+                  selected={category === value}
                   key={uniqid()}
                   value={value}
                 >
@@ -91,10 +91,17 @@ class BooksForm extends Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string),
 };
+
+BooksForm.defaultProps = {
+  categories: [],
+};
+
+const mapStateToProps = ({ categories }) => ({ categories });
 
 const mapDispatchToProps = {
   createBook,
 };
 
-export default connect(null, mapDispatchToProps)(BooksForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);
