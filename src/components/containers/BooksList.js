@@ -4,7 +4,7 @@ import key from 'uniqid';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteBook } from '../../redux/actions';
-import Book from '../items/Book';
+import Book from '../presentational/Book';
 
 function BooksList({ books, deleteBook }) {
   const handleDeleteBook = ({ target: { dataset: { id } } }) => {
