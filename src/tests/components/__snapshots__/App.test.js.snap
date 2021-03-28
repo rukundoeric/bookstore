@@ -10,73 +10,75 @@ exports[`Should match snapshot 1`] = `
     >
       <form>
         <div
-          class="mb-3"
+          class="mb-3 row"
         >
           <label
-            class="form-label"
+            class="form-label col-lg--12"
             for="title"
           >
             Title
+            <input
+              class="form-control"
+              id="title"
+              name="title"
+              placeholder="Title"
+              required=""
+              type="text"
+              value=""
+            />
           </label>
-          <input
-            class="form-control"
-            id="title"
-            name="title"
-            placeholder="Title"
-            required=""
-            type="text"
-            value=""
-          />
         </div>
-        <div>
+        <div
+          class="row"
+        >
           <label
-            class="form-label"
+            class="form-label col-lg--12"
             for="category"
           >
             Category
+            <select
+              aria-label="Default select example"
+              class="form-select"
+              name="category"
+              required=""
+            >
+              <option
+                value="Fiction"
+              >
+                Fiction
+              </option>
+              <option
+                value="Biography"
+              >
+                Biography
+              </option>
+              <option
+                value="History"
+              >
+                History
+              </option>
+              <option
+                value="Horror"
+              >
+                Horror
+              </option>
+              <option
+                value="Kids"
+              >
+                Kids
+              </option>
+              <option
+                value="Learning"
+              >
+                Learning
+              </option>
+              <option
+                value="Sci-Fi"
+              >
+                Sci-Fi
+              </option>
+            </select>
           </label>
-          <select
-            aria-label="Default select example"
-            class="form-select"
-            name="category"
-            required=""
-          >
-            <option
-              value="Fiction"
-            >
-              Fiction
-            </option>
-            <option
-              value="Biography"
-            >
-              Biography
-            </option>
-            <option
-              value="History"
-            >
-              History
-            </option>
-            <option
-              value="Horror"
-            >
-              Horror
-            </option>
-            <option
-              value="Kids"
-            >
-              Kids
-            </option>
-            <option
-              value="Learning"
-            >
-              Learning
-            </option>
-            <option
-              value="Sci-Fi"
-            >
-              Sci-Fi
-            </option>
-          </select>
         </div>
         <button
           class="btn btn-primary mt-3"
