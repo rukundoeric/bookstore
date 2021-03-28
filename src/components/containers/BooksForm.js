@@ -9,7 +9,7 @@ class BooksForm extends Component {
     super(props);
     this.state = {
       title: '',
-      category: 'Fiction',
+      category: 'Fiction', // default category
       categories: ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
     };
   }
