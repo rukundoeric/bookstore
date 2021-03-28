@@ -74,7 +74,7 @@ class BooksForm extends Component {
             >
               {categories.map(value => (
                 <option
-                  defaultValue={category === value}
+                  selected={category === value}
                   key={uniqid()}
                   value={value}
                 >
@@ -92,7 +92,11 @@ class BooksForm extends Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
-  categories: PropTypes.array.isRequired,
+  categories: PropTypes.array,
+};
+
+BooksForm.defaultProps = {
+  categories: [],
 };
 
 const mapStateToProps = ({ categories }) => ({ categories });

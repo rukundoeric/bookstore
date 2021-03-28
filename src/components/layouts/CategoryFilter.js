@@ -7,7 +7,6 @@ function CategoryFilter({ categories, handleFilterChange, filter }) {
   return (
     <div className="row">
       <label htmlFor="category" className="form-label d-flex">
-        Category
         <select
           required
           className="form-select"
@@ -16,7 +15,7 @@ function CategoryFilter({ categories, handleFilterChange, filter }) {
         >
           {['All', ...categories].map(value => (
             <option
-              defaultValue={filter === value}
+              selected={filter === value}
               key={key()}
               value={value}
             >
