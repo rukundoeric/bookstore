@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -10,7 +11,6 @@ class BooksForm extends Component {
     this.state = {
       title: '',
       category: 'Fiction',
-      categories: ['Fiction', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'],
     };
   }
 
@@ -42,7 +42,8 @@ class BooksForm extends Component {
   }
 
   render() {
-    const { title, category, categories } = this.state;
+    const { title, category } = this.state;
+    const { categories } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -91,10 +92,13 @@ class BooksForm extends Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
+  categories: PropTypes.array.isRequired,
 };
+
+const mapStateToProps = ({ categories }) => ({ categories });
 
 const mapDispatchToProps = {
   createBook,
 };
 
-export default connect(null, mapDispatchToProps)(BooksForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);
