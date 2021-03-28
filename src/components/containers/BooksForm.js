@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -92,7 +91,7 @@ class BooksForm extends Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
-  categories: PropTypes.array,
+  categories: PropTypes.arrayOf(PropTypes.string),
 };
 
 BooksForm.defaultProps = {

@@ -29,7 +29,7 @@ function CategoryFilter({ categories, handleFilterChange, filter }) {
 }
 
 CategoryFilter.propTypes = {
-  categories: PropTypes.array.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleFilterChange: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
 };

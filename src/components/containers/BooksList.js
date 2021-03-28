@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import key from 'uniqid';
 import _ from 'lodash';
@@ -65,10 +64,10 @@ function BooksList({
 }
 
 BooksList.propTypes = {
-  books: PropTypes.array.isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  categories: PropTypes.array.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   filter: PropTypes.string.isRequired,
 };
 
