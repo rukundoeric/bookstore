@@ -1,16 +1,21 @@
-const initialState = {
-  books: [],
-};
+import _ from 'lodash';
 
-export default (state = initialState, action) => {
+export default (state = [], action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case 'GET_BOOKS':
-      return {
+    case 'CREATE_BOOK':
+      return [
         ...state,
-        books: payload,
-      };
+        { ...payload },
+      ];
+
+    case 'DELETE_BOOK': {
+      _.remove(state, book => book.id === payload);
+      return [
+        ...state,
+      ];
+    }
 
     default:
       return state;
