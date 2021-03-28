@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -47,38 +46,42 @@ class BooksForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="title" className="form-label">Title</label>
-          <input
-            required
-            type="text"
-            name="title"
-            value={title}
-            className="form-control"
-            id="title"
-            placeholder="Title"
-            onChange={this.handleChange}
-          />
+        <div className="mb-3 row">
+          <label htmlFor="title" className="form-label col-lg--12">
+            Title
+            <input
+              required
+              type="text"
+              name="title"
+              value={title}
+              className="form-control"
+              id="title"
+              placeholder="Title"
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="category" className="form-label">Category</label>
-          <select
-            required
-            className="form-select"
-            name="category"
-            aria-label="Default select example"
-            onChange={this.handleChange}
-          >
-            {categories.map(value => (
-              <option
-                defaultValue={category === value}
-                key={uniqid()}
-                value={value}
-              >
-                {value}
-              </option>
-            ))}
-          </select>
+        <div className="row">
+          <label htmlFor="category" className="form-label col-lg--12">
+            Category
+            <select
+              required
+              className="form-select"
+              name="category"
+              aria-label="Default select example"
+              onChange={this.handleChange}
+            >
+              {categories.map(value => (
+                <option
+                  defaultValue={category === value}
+                  key={uniqid()}
+                  value={value}
+                >
+                  {value}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </form>
