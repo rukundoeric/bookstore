@@ -10,11 +10,64 @@ $font1: -apple-system,
   'Helvetica Neue',
   sans-serif;
 
+$color1: #fafafa;
+$color2: #0290ff;
+$color3: #adadad;
+$color4: #252525;
+$color5: #f4f5f9;
+
 body {
   margin: 0;
+  background-color: $color1;
 }
 
 h1 {
   font-size: 30px;
   font-family: $font1;
+}
+
+.header {
+  height: 70px;
+  background-color: white;
+  border-bottom: 3px solid $color5;
+
+  .container {
+    height: 100%;
+
+    .left {
+      h6 {
+        color: $color2;
+        font-size: 20px;
+        font-family: $font1;
+        font-weight: 900;
+      }
+    }
+
+    .right {
+      span {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid $color5;
+        color: $color2;
+        font-family: $font1;
+        font-weight: 900;
+      }
+    }
+  }
+}
+
+.content {
+  background-color: $color1;
+  height: 100vh;
+}
+
+.bookform {
+  .col-lg-2 {
+    button {
+      float: right;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
 }

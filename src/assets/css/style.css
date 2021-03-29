@@ -1,10 +1,38 @@
 body {
   margin: 0;
-}
+  background-color: #fafafa; }
 
 h1 {
   font-size: 30px;
-  font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
+  font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+
+.header {
+  height: 70px;
+  background-color: white;
+  border-bottom: 3px solid #f4f5f9; }
+  .header .container {
+    height: 100%; }
+    .header .container .left h6 {
+      color: #0290ff;
+      font-size: 20px;
+      font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-weight: 900; }
+    .header .container .right span {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #f4f5f9;
+      color: #0290ff;
+      font-family: -apple-system, blinkmacsystemfont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-weight: 900; }
+
+.content {
+  background-color: #fafafa;
+  height: 100vh; }
+
+.bookform .col-lg-2 button {
+  float: right;
+  font-size: 15px;
+  font-weight: 500; }
 
 /*# sourceMappingURL=style.css.map */
