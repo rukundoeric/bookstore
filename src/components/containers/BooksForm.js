@@ -47,7 +47,8 @@ class BooksForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="container bookform">
-          <div className="d-flex row">
+          <span className="title">ADD NEW BOOK</span>
+          <div className="d-flex row mt-3">
             <div className="col-lg-7">
               <input
                 required

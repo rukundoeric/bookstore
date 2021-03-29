@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Book({ index, book, handleDeleteBook }) {
+function Book({ book, handleDeleteBook }) {
   return (
-    <tr>
-      <td>{index}</td>
-      <td>{book.id}</td>
-      <td>{book.title}</td>
-      <td>{book.category}</td>
-      <td>
+    <div className="mt-3 p-4 item bg-body rounded d-flex flex-column">
+      <span className="category">{book.category}</span>
+      <span className="title">{book.title}</span>
+      <span className="id">{book.id}</span>
+      <div className="pt-3">
         <button
           data-id={book.id}
           type="button"
-          className="badge bg-danger"
+          className="delButton"
           onClick={handleDeleteBook}
         >
           Delete
         </button>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 }
 
@@ -28,7 +27,6 @@ Book.propTypes = {
     title: PropTypes.string,
     category: PropTypes.string,
   }).isRequired,
-  index: PropTypes.number.isRequired,
   handleDeleteBook: PropTypes.func.isRequired,
 };
 

@@ -8,10 +8,11 @@ function App() {
   return (
     <div className="content">
       <Header />
-      <div className="container mt-3">
+      <div className="container mt-2">
         <BooksList />
       </div>
-      <div className="container mt-5">
+      <div className="container line" />
+      <div className="container mt-2">
         <BooksForm />
       </div>
     </div>
