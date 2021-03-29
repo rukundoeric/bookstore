@@ -8,7 +8,7 @@ function Header() {
           <h6>BookStore CMS</h6>
         </div>
         <div className="d-flex right justify-content-center align-items-center">
-          <span className="d-flex justify-content-center align-items-center"><i>B</i></span>
+          <span className="d-flex justify-content-center align-items-center"><i className="fas fa-user" /></span>
         </div>
       </div>
     </header>
