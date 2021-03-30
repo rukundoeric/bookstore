@@ -21,7 +21,7 @@ function BooksList({
   const booksList = filter === 'All' ? books : _.filter(books, book => book.category === filter);
 
   return (
-    <div className="shadow p-3 mb-5 bg-body rounded">
+    <div className="p-3 mb-5">
       <div>
         <CategoryFilter
           categories={categories}
@@ -29,8 +29,23 @@ function BooksList({
           handleFilterChange={handleFilterChange}
         />
       </div>
-      <div>
-        <table className="table table-striped table-hover">
+      <div className="listItems">
+        {
+          booksList.length <= 0
+            ? (
+              <div className="container">
+                <h5 className="text-center mt-4">
+                  No record found!
+                </h5>
+              </div>
+            )
+            : (
+              booksList.map((book, i) => (
+                <Book handleDeleteBook={handleDeleteBook} index={i} book={book} key={key()} />
+              ))
+            )
+        }
+        {/* <table className="table table-striped table-hover">
           <thead>
             <tr>
               <th>#</th>
@@ -41,23 +56,9 @@ function BooksList({
             </tr>
           </thead>
           <tbody>
-            {
-              booksList.length <= 0
-                ? (
-                  <tr>
-                    <th colSpan="5" className="text-center">
-                      No record found!
-                    </th>
-                  </tr>
-                )
-                : (
-                  booksList.map((book, i) => (
-                    <Book handleDeleteBook={handleDeleteBook} index={i} book={book} key={key()} />
-                  ))
-                )
-            }
+
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   );

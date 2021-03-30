@@ -46,44 +46,45 @@ class BooksForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className="mb-3 row">
-          <label htmlFor="title" className="form-label col-lg--12">
-            Title
-            <input
-              required
-              type="text"
-              name="title"
-              value={title}
-              className="form-control"
-              id="title"
-              placeholder="Title"
-              onChange={this.handleChange}
-            />
-          </label>
+        <div className="container bookform">
+          <span className="title">ADD NEW BOOK</span>
+          <div className="d-flex row mt-3">
+            <div className="col-lg-7">
+              <input
+                required
+                type="text"
+                name="title"
+                value={title}
+                className="form-control"
+                id="title"
+                placeholder="Title"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="col-lg-3">
+              <select
+                required
+                className="form-select"
+                name="category"
+                aria-label="Default select example"
+                onChange={this.handleChange}
+              >
+                {categories.map(value => (
+                  <option
+                    selected={category === value}
+                    key={uniqid()}
+                    value={value}
+                  >
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="col-lg-2">
+              <button type="submit" className="btn btn-primary px-5">ADD BOOK</button>
+            </div>
+          </div>
         </div>
-        <div className="row">
-          <label htmlFor="category" className="form-label col-lg--12">
-            Category
-            <select
-              required
-              className="form-select"
-              name="category"
-              aria-label="Default select example"
-              onChange={this.handleChange}
-            >
-              {categories.map(value => (
-                <option
-                  selected={category === value}
-                  key={uniqid()}
-                  value={value}
-                >
-                  {value}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </form>
     );
   }
